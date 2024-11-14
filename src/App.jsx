@@ -13,6 +13,10 @@ function App() {
   // Increment the score if the selected option is correct, and move to the next question.
   const optionClick = (isCorrect) => {
     console.log('Option clicked:', isCorrect);
+    if(isCorrect){
+      setScore(score + 1);
+    }
+    setCurrentQuestion(currentQuestion + 1);
 
     // Increment score if the answer is correct
     // Move to the next question
@@ -21,6 +25,8 @@ function App() {
   // TASK 2: Write the logic to restart the quiz when this function is called.
   const restartQuiz = () => {
     // Reset score and current question
+    setCurrentQuestion(0);
+    setScore(0);
   };
 
   return (
